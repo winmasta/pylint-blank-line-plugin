@@ -1,1 +1,0 @@
-from pylint_blank_line_plugin.blank_line import register
