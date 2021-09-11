@@ -9,7 +9,7 @@ class TestUniqueReturnChecker(pylint.testutils.CheckerTestCase):
     CHECKER_CLASS = checker.BlankLineChecker
 
     def test_wrong_blank_line_first_stmt_after_indent(self):
-        with open('fixtures/fixture1.txt', encoding='utf-8') as f:
+        with open('tests/fixtures/fixture1.txt', encoding='utf-8') as f:
             with self.assertAddsMessages(
                     pylint.testutils.Message(
                         msg_id='wrong-blank-line',
@@ -23,7 +23,7 @@ class TestUniqueReturnChecker(pylint.testutils.CheckerTestCase):
                 self.checker.process_module(Module(name='temp', doc='', file=f.name))
 
     def test_need_blank_line_before(self):
-        with open('fixtures/fixture2.txt', encoding='utf-8') as f:
+        with open('tests/fixtures/fixture2.txt', encoding='utf-8') as f:
             with self.assertAddsMessages(
                     pylint.testutils.Message(
                         msg_id='need-blank-line',
@@ -37,7 +37,7 @@ class TestUniqueReturnChecker(pylint.testutils.CheckerTestCase):
                 self.checker.process_module(Module(name='temp', doc='', file=f.name))
 
     def test_need_blank_line_after(self):
-        with open('fixtures/fixture3.txt', encoding='utf-8') as f:
+        with open('tests/fixtures/fixture3.txt', encoding='utf-8') as f:
             with self.assertAddsMessages(
                     pylint.testutils.Message(
                         msg_id='need-blank-line',
@@ -51,16 +51,16 @@ class TestUniqueReturnChecker(pylint.testutils.CheckerTestCase):
                 self.checker.process_module(Module(name='temp', doc='', file=f.name))
 
     def test_no_messages(self):
-        with open('fixtures/fixture4.txt', encoding='utf-8') as f:
+        with open('tests/fixtures/fixture4.txt', encoding='utf-8') as f:
             with self.assertNoMessages():
                 self.checker.process_module(Module(name='temp', doc='', file=f.name))
 
     def test_no_messages_2(self):
-        with open('fixtures/fixture5.txt', encoding='utf-8') as f:
+        with open('tests/fixtures/fixture5.txt', encoding='utf-8') as f:
             with self.assertNoMessages():
                 self.checker.process_module(Module(name='temp', doc='', file=f.name))
 
     def test_no_messages_3(self):
-        with open('fixtures/fixture6.txt', encoding='utf-8') as f:
+        with open('tests/fixtures/fixture6.txt', encoding='utf-8') as f:
             with self.assertNoMessages():
                 self.checker.process_module(Module(name='temp', doc='', file=f.name))
