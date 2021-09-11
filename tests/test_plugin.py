@@ -64,3 +64,8 @@ class TestUniqueReturnChecker(pylint.testutils.CheckerTestCase):
         with open('tests/fixtures/fixture6.txt', encoding='utf-8') as f:
             with self.assertNoMessages():
                 self.checker.process_module(Module(name='temp', doc='', file=f.name))
+
+    def test_no_messages_4(self):
+        with open('tests/fixtures/fixture7.txt', encoding='utf-8') as f:
+            with self.assertNoMessages():
+                self.checker.process_module(Module(name='temp', doc='', file=f.name))

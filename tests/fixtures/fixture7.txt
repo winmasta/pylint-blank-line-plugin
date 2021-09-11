@@ -1,0 +1,4 @@
+def some():
+    if True:
+        print()
+        returned_value = 1
