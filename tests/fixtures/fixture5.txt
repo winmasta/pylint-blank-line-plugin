@@ -1,0 +1,4 @@
+with open():
+    class SomeClass:
+        def some_name():
+            return

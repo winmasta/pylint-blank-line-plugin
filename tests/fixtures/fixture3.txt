@@ -1,0 +1,5 @@
+def some_name():
+    print('')
+
+    yield True
+    print('')
