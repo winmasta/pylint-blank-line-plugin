@@ -47,11 +47,14 @@ class BlankLineChecker(BaseChecker):
                     continue
 
                 ret_stmt_second_line = (
-                        second_line.strip().startswith('return')
-                        or second_line.strip().startswith('yield')
-                        or second_line.strip().startswith('raise')
-                        or second_line.strip().startswith('break')
-                        or second_line.strip().startswith('continue')
+                        second_line.strip().startswith('return ')
+                        or second_line.strip().startswith('return\n')
+                        or second_line.strip().startswith('yield ')
+                        or second_line.strip().startswith('yield\n')
+                        or second_line.strip().startswith('raise ')
+                        or second_line.strip().startswith('raise\n')
+                        or second_line.strip().startswith('break\n')
+                        or second_line.strip().startswith('continue\n')
                 )
                 if ret_stmt_second_line and third_line != '':
                     second_line_copy = second_line
@@ -69,8 +72,14 @@ class BlankLineChecker(BaseChecker):
                         pass
 
                 ret_stmt_third_line = (
-                        third_line.strip().startswith('return')
-                        or third_line.strip().startswith('yield')
+                    third_line.strip().startswith('return ')
+                    or third_line.strip().startswith('return\n')
+                    or third_line.strip().startswith('yield ')
+                    or third_line.strip().startswith('yield\n')
+                    or third_line.strip().startswith('raise ')
+                    or third_line.strip().startswith('raise\n')
+                    or third_line.strip().startswith('break\n')
+                    or third_line.strip().startswith('continue\n')
                 )
 
                 if ret_stmt_third_line:
