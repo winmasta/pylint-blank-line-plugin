@@ -1,6 +1,6 @@
 import pylint.testutils
 from astroid.nodes.scoped_nodes import Module
-from pylint.interfaces import Confidence
+from pylint.interfaces import UNDEFINED
 
 from pylint_blank_line_plugin import checker
 
@@ -11,13 +11,10 @@ class TestUniqueReturnChecker(pylint.testutils.CheckerTestCase):
     def test_wrong_blank_line_first_stmt_after_indent(self):
         with open('tests/fixtures/fixture1.txt', encoding='utf-8') as f:
             with self.assertAddsMessages(
-                    pylint.testutils.Message(
+                    pylint.testutils.MessageTest(
                         msg_id='wrong-blank-line',
                         line=2,
-                        confidence=Confidence(
-                            name='UNDEFINED',
-                            description='Warning without any associated confidence level.',
-                        ),
+                        confidence=UNDEFINED,
                     )
             ):
                 self.checker.process_module(Module(name='temp', doc='', file=f.name))
@@ -25,13 +22,10 @@ class TestUniqueReturnChecker(pylint.testutils.CheckerTestCase):
     def test_need_blank_line_before(self):
         with open('tests/fixtures/fixture2.txt', encoding='utf-8') as f:
             with self.assertAddsMessages(
-                    pylint.testutils.Message(
+                    pylint.testutils.MessageTest(
                         msg_id='need-blank-line',
                         line=3,
-                        confidence=Confidence(
-                            name='UNDEFINED',
-                            description='Warning without any associated confidence level.',
-                        ),
+                        confidence=UNDEFINED,
                     )
             ):
                 self.checker.process_module(Module(name='temp', doc='', file=f.name))
@@ -39,13 +33,10 @@ class TestUniqueReturnChecker(pylint.testutils.CheckerTestCase):
     def test_need_blank_line_after(self):
         with open('tests/fixtures/fixture3.txt', encoding='utf-8') as f:
             with self.assertAddsMessages(
-                    pylint.testutils.Message(
+                    pylint.testutils.MessageTest(
                         msg_id='need-blank-line',
                         line=5,
-                        confidence=Confidence(
-                            name='UNDEFINED',
-                            description='Warning without any associated confidence level.',
-                        ),
+                        confidence=UNDEFINED,
                     )
             ):
                 self.checker.process_module(Module(name='temp', doc='', file=f.name))
