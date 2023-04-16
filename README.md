@@ -7,5 +7,5 @@ pip install pylint-blank-line-plugin
 
 Usage:
 ```bash
-pylint --load-plugins blank_line FILES_TO_CHECK
+pylint --load-plugins pylint_blank_line_plugin FILES_TO_CHECK
 ```
